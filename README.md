@@ -6,15 +6,15 @@ About --------------------------------------------------------------------------
 This project will create a web app that will display trivia questions. The user will have a time limit to answer the current question correctly. Upon time expiring the html will update to show either correct, or incorrect and display the correct answer. The questions will automatically be replaced with new ones after either condition is met upon a certain value of time determined by the program.
 
 
-Things I need to make this work------------------------------------------------------------------------
+Things I need to make this work - (planning) ------------------------------------------------------------------------
 
 -Set of questions paired with multiple answers (use objects for this feature?)
     -object could look like:
         var question1 = {
             question: What is life?
             correct: some good stuff
-            wrong: lies
-            wrong: a virtual reality simulation
+            wrong1: lies
+            wrong2: a virtual reality simulation
 
         }
 
