@@ -31,15 +31,15 @@ qBank = [
 
 i = 0;
 
-var qItem = '<div class="row" id="qItem">'
+var qItem = '<div class="row qItem">'
 
 function showQuestion(){
-    $('#card').append(qItem + qBank[0].question + '</div>')
+    $('#card').append('<div class = "row" id="question">' + qBank[0].question + '</div>')
     $('#card').append(qItem + qBank[0].a1 + '</div>')
     $('#card').append(qItem + qBank[0].a2 + '</div>')
     $('#card').append(qItem + qBank[0].a3 + '</div>')
     $('#card').append(qItem + qBank[0].a4 + '</div>')
-    setTimeout(answerTimer, 4000);
+    setTimeout(answerTimer, 40000);
     i++;
 
 };
@@ -51,3 +51,9 @@ function answerTimer(){
 };
 
 var test = $('button').attr('id')
+
+var input = '';
+
+$('.qItem').on('click', function(){
+    input = $(this).text();
+})
