@@ -1,5 +1,4 @@
 //qBank(question bank) array with question objects containing questions and answers------------------
-
 qBank = [
     q1 = {
         question : "This is question 1",
@@ -12,29 +11,29 @@ qBank = [
 
     q2 = {
         question : "This is question 2",
-        a1 : "This is the answer",
+        a1 : "this is the answer 2",
         a2 : "this is wrong answer 1",
         a3 : "this is wrong answer 2",
         a4 : "this is wrong answer 3",
-        answer : "this is the answer",
+        answer : "this is the answer 2",
     },
 
     q3 = {
         question : "This is question 3",
-        a1 : "This is the answer",
+        a1 : "this is answer 3",
         a2 : "this is wrong answer 1",
         a3 : "this is wrong answer 2",
         a4 : "this is wrong answer 3",
-        answer : "this is the answer",
+        answer : "this is answer 3",
     }
 ];
 
-i = 0;
-
+var i = 0; 
+var correct = 0;
+var wrong = 0;
 var qItem = '<div class="row qItem">'
-
-input = "";
-answer = qBank[i].answer;
+var input = "";
+var answer = qBank[i].answer;
 
 function showQuestion(){
     $('#card').html('');//clears out element to prep for new questions and answers
@@ -51,13 +50,20 @@ function showQuestion(){
 function correct() {
     $('.selected').css('background-color', 'green' )
     i++;
-    setTimeout(showQuestion, 3000);
+    correct++;
+    if ( i < qBank.length) {
+        setTimeout(showQuestion, 3000);
+    }
+    
 };
 
 function incorrect() {
     $('.selected').css('background-color', 'red' )
     i++;
-    setTimeout(showQuestion, 3000);  
+    wrong++;
+    if ( i < qBank.length) {
+        setTimeout(showQuestion, 3000);
+    } 
 };
 
 function answerTimer(){
@@ -72,8 +78,8 @@ function answerTimer(){
 showQuestion();
 
 
-$('.qItem').on('click', function(){
-    $('.qItem').removeClass('selected'); //clears out the 'selected' class from the previous choice
+$('#card').on('click', '.qItem', function(){
+    $('.qItem').removeClass('selected'); //clears out the 'selected' class from the previous choice (if any)
     $(this).addClass('selected');//Adds 'selected' class to current selection
     input = $(this).text();
 })
