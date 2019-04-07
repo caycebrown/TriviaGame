@@ -29,7 +29,7 @@ qBank = [
 ];
 
 var i = 0; 
-var correct = 0;
+var right = 0;
 var wrong = 0;
 var qItem = '<div class="row qItem">'
 var input = "";
@@ -50,9 +50,11 @@ function showQuestion(){
 function correct() {
     $('.selected').css('background-color', 'green' )
     i++;
-    correct++;
+    right++;
     if ( i < qBank.length) {
         setTimeout(showQuestion, 3000);
+    } else {
+        results();
     }
     
 };
@@ -63,7 +65,9 @@ function incorrect() {
     wrong++;
     if ( i < qBank.length) {
         setTimeout(showQuestion, 3000);
-    } 
+    } else {
+        results();
+    }
 };
 
 function answerTimer(){
@@ -73,6 +77,13 @@ function answerTimer(){
         incorrect();
     }
 };
+
+function results(){
+    $('#card').html('');
+    $('#card').append('<h3>You got: ' + right + ' answers correct</h3>')
+    $('#card').append('<h3>You got: ' + wrong + ' answers incorrect</h3>')
+
+}
 
 
 showQuestion();
