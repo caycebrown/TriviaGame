@@ -61,6 +61,7 @@ function correct() {
 
 function incorrect() {
     $('.selected').css('background-color', 'red' )
+    $('#card').append('<div>Correct answer: ' + qBank[i].answer + ' </div>')
     i++;
     wrong++;
     if ( i < qBank.length) {
@@ -85,8 +86,10 @@ function results(){
 
 }
 
+$('#start').on('click', function (){
+    showQuestion();
+});
 
-showQuestion();
 
 
 $('#card').on('click', '.qItem', function(){
