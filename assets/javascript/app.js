@@ -61,7 +61,7 @@ function correct() {
 
 function incorrect() {
     $('.selected').css('background-color', 'red' )
-    $('#card').append('<div>Correct answer: ' + qBank[i].answer + ' </div>')
+    $('#card').append(qItem + 'Correct Answer: ' + qBank[i].answer + ' </div>')
     i++;
     wrong++;
     if ( i < qBank.length) {
