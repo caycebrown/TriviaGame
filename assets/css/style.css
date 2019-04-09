@@ -1,6 +1,11 @@
+body {
+    background-image: url('../images/cartographer.png');
+}
+
 .row {
     align-content: center;
     justify-content: center;
+    text-align: center;
 }
 
 .col {
@@ -12,10 +17,24 @@
     margin-top: 25px;
 }
 
+h1, h3 {
+    color: wheat;
+}
+
+h2 {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
 #card {
     margin-top: 50px;
     height: 50vh;
-    background-color: lightblue;
+    background-color: rgb(158, 158, 158);
 }
 
 #question {
@@ -25,7 +44,19 @@
 
 .row .qItem {
     font-size: 20px;
-    line-height: 1.5;
+    line-height: 2;
     font-weight: bold;
     justify-content: left;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+#footer {
+    margin-top: 30px;
+}
+
+.selected {
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
 }
