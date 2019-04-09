@@ -81,8 +81,8 @@ function answerTimer(){
 
 function results(){
     $('#card').html('');
-    $('#card').append('<h3>You got: ' + right + ' answers correct</h3>')
-    $('#card').append('<h3>You got: ' + wrong + ' answers incorrect</h3>')
+    $('#card').append('<h2>You got: ' + right + ' answers correct</h2>')
+    $('#card').append('<h2>You got: ' + wrong + ' answers incorrect</h2>')
 
 }
 
